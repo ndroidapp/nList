@@ -3,6 +3,7 @@ package com.example.android.nlist;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     int index;
     AlertDialog.Builder builder;
     Activity context;
+    FloatingActionButton fabAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lvList = findViewById(R.id.lvList);
+        fabAdd=findViewById(R.id.fabAdd);
 
         arrayList = new ArrayList<>();
         arrayList.add("Noida");
@@ -61,7 +64,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addItem();
+            }
+        });
+
         registerForContextMenu(lvList);
+
     }
 
     @Override
