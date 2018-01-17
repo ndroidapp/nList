@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
             renameItem();
         } else {
             deleteItem();
+            /*AdapterView.AdapterContextMenuInfo data= (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+            arrayList.remove(data.position);*/
         }
         return super.onContextItemSelected(item);
     }
